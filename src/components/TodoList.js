@@ -1,2 +1,14 @@
-// your components will all go in this `component` directory.
-// feel free to change this component.js into TodoList.js
+//will get the todo list data and iterate over it creating a new todo for each item
+import React from 'react';
+import Todo from './Todo';
+
+const TodoList = props => {
+    let items = props.items 
+    let handleCompletion = props.handleCompletion
+    return (
+        items.map(item => {
+            return <Todo handleCompletion={handleCompletion} item={item} key={item.id}/>
+        })
+    )
+}
+export default TodoList
