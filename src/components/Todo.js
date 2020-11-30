@@ -5,7 +5,7 @@ const Todo = props => {
     let handleCompletion = props.handleCompletion
     
     return (
-    <p onClick={() => handleCompletion(props.item.id) }>{props.item.task}</p>
+    <p style={props.item.completed ? {textDecoration: 'line-through'} : {textDecoration: 'none'}} onClick={() => handleCompletion(props.item.id) }>{props.item.task}</p>
     )
 };
 
