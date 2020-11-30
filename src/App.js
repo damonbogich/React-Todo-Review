@@ -24,14 +24,21 @@ class App extends React.Component {
       ]
     }
   }
-
-
+  handleCompletion = (id) => {
+    let data = this.state.data
+    data.forEach(item => {
+      if (item.id === id) {
+        item.completed = !item.completed
+      } 
+    })
+    this.setState({data})
+  }
 
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList items={this.state.data}/>
+        <TodoList handleCompletion={this.handleCompletion} items={this.state.data}/>
         <TodoForm />
       </div>
     );

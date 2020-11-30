@@ -1,9 +1,11 @@
 import React from 'react';
 
 const Todo = props => {
-    console.log(props, 'todoprops')
+    console.log(props.item, 'todo props')
+    let handleCompletion = props.handleCompletion
+    
     return (
-    <p>{props.task}</p>
+    <p onClick={() => handleCompletion(props.item.id) }>{props.item.task}</p>
     )
 };
 
