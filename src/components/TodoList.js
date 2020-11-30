@@ -3,13 +3,10 @@ import React from 'react';
 import Todo from './Todo';
 
 const TodoList = props => {
-    // console.log(props, 'props from TodoList')
-    let items = props.items //array of items from data in state
-    // console.log(items, 'items here')
+    let items = props.items 
     let handleCompletion = props.handleCompletion
     return (
         items.map(item => {
-            // console.log(item, 'item in map')
             return <Todo handleCompletion={handleCompletion} item={item} key={item.id}/>
         })
     )
